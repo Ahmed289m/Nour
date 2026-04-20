@@ -1,0 +1,79 @@
+.treat__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: var(--space-12) clamp(var(--space-8), 7vw, 100px);
+  gap: var(--space-8);
+}
+
+.treat__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.treat__header > * { opacity: 0; }
+
+.treat__title {
+  color: var(--color-text-primary);
+}
+
+.treat__title em {
+  color: var(--color-amber);
+  font-style: italic;
+}
+
+.treat__subtitle {
+  max-width: 540px;
+}
+
+.treat__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-5);
+}
+
+.treat__card {
+  opacity: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border-color: rgba(245, 197, 66, 0.1);
+}
+
+.treat__card:hover {
+  border-color: rgba(245, 197, 66, 0.3);
+}
+
+.treat__footer {
+  opacity: 0;
+}
+
+.treat__hope-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-6);
+}
+
+.treat__hope-icon {
+  color: var(--color-amber);
+  font-size: var(--text-sm);
+  animation: breathe-amb 3s ease-in-out infinite;
+}
+
+.treat__hope-text {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-style: italic;
+  color: var(--color-text-amber);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .treat__cards { grid-template-columns: 1fr 1fr; }
+  .treat__inner { overflow-y: auto; padding: var(--space-10) var(--space-6); }
+}
+
+@media (max-width: 480px) {
+  .treat__cards { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,91 @@
+.anorexia__inner {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  align-items: center;
+  height: 100%;
+  padding: var(--space-16) clamp(var(--space-8), 7vw, 100px);
+  gap: var(--space-16);
+}
+
+.anorexia__eyebrow-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  opacity: 0;
+}
+
+.anorexia__heading {
+  color: var(--color-text-primary);
+}
+
+.anorexia__heading em {
+  color: var(--color-teal);
+  font-style: italic;
+  display: block;
+}
+
+.anorexia__card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  opacity: 0;
+}
+
+.anorexia__definition {
+  line-height: 1.8;
+}
+
+.anorexia__points {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.anorexia__point {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  opacity: 0;
+}
+
+.anorexia__point-icon {
+  color: var(--color-teal);
+  font-size: 8px;
+  margin-top: 7px;
+  flex-shrink: 0;
+}
+
+.anorexia__point span:last-child {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-normal);
+}
+
+.anorexia__alert {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background: var(--color-crimson-dim);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(224, 85, 85, 0.15);
+}
+
+.anorexia__alert-text {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+@media (max-width: 900px) {
+  .anorexia__inner {
+    grid-template-columns: 1fr;
+    padding: var(--space-10) var(--space-6);
+    overflow-y: auto;
+    gap: var(--space-8);
+    align-items: flex-start;
+    padding-top: var(--space-16);
+  }
+}

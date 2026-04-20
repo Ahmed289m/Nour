@@ -1,0 +1,138 @@
+/* ── Background float ───────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+
+@keyframes float-subtle {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-6px); }
+}
+
+/* ── Pulse / glow effects ───────────────────── */
+@keyframes pulse-teal {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(45, 212, 168, 0); }
+  50%       { box-shadow: 0 0 30px 8px rgba(45, 212, 168, 0.15); }
+}
+
+@keyframes pulse-amber {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(245, 197, 66, 0); }
+  50%       { box-shadow: 0 0 40px 12px rgba(245, 197, 66, 0.2); }
+}
+
+/* ── Breathing glow on text ─────────────────── */
+@keyframes breathe-teal {
+  0%, 100% { text-shadow: 0 0 0px rgba(45, 212, 168, 0); }
+  50%       { text-shadow: 0 0 20px rgba(45, 212, 168, 0.4); }
+}
+
+@keyframes breathe-amber {
+  0%, 100% { text-shadow: 0 0 0px rgba(245, 197, 66, 0); }
+  50%       { text-shadow: 0 0 25px rgba(245, 197, 66, 0.5); }
+}
+
+/* ── Particle sparkle ───────────────────────── */
+@keyframes sparkle {
+  0%   { opacity: 0; transform: scale(0) rotate(0deg); }
+  50%  { opacity: 1; transform: scale(1) rotate(180deg); }
+  100% { opacity: 0; transform: scale(0) rotate(360deg); }
+}
+
+/* ── Shimmer over cards ─────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ── Heartbeat line ─────────────────────────── */
+@keyframes heartbeat-draw {
+  from { stroke-dashoffset: 1000; }
+  to   { stroke-dashoffset: 0; }
+}
+
+/* ── Gradient shift ─────────────────────────── */
+@keyframes gradient-drift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ── Dot pulse (nav) ────────────────────────── */
+@keyframes dot-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.4); opacity: 0.7; }
+}
+
+/* ── Fade in up ─────────────────────────────── */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Utility animation classes ──────────────── */
+.anim-float        { animation: float 4s ease-in-out infinite; }
+.anim-float-subtle { animation: float-subtle 5s ease-in-out infinite; }
+.anim-pulse-teal   { animation: pulse-teal 3s ease-in-out infinite; }
+.anim-pulse-amber  { animation: pulse-amber 3s ease-in-out infinite; }
+.anim-breathe-teal { animation: breathe-teal 3s ease-in-out infinite; }
+.anim-breathe-amb  { animation: breathe-amber 3s ease-in-out infinite; }
+.anim-fade-up      { animation: fade-in-up 0.6s ease forwards; }
+
+/* ── Preloader ──────────────────────────────── */
+.preloader {
+  position: fixed;
+  inset: 0;
+  background: var(--color-bg-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.preloader__logo {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  color: var(--color-teal);
+  letter-spacing: var(--tracking-tight);
+}
+
+.preloader__bar-wrap {
+  width: 200px;
+  height: 1px;
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.preloader__bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-teal), var(--color-amber));
+  border-radius: var(--radius-full);
+}
+
+/* ── Particles canvas ───────────────────────── */
+.particles-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Ken Burns background ───────────────────── */
+.ken-burns {
+  animation: kenBurns 12s ease-in-out infinite alternate;
+}
+
+@keyframes kenBurns {
+  from { transform: scale(1); }
+  to   { transform: scale(1.08); }
+}

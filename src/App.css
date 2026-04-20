@@ -1,0 +1,138 @@
+/* Global app layout */
+.app {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background: #080808;
+}
+
+.sections-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Top navigation bar ─────────────────────── */
+.app-topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(var(--space-6), 5vw, 60px);
+  z-index: 600;
+  background: linear-gradient(180deg, rgba(8,8,8,0.9) 0%, rgba(8,8,8,0) 100%);
+  backdrop-filter: blur(2px);
+}
+
+.app-topbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.app-topbar__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-teal);
+  box-shadow: 0 0 10px var(--color-teal);
+  transition: background 0.6s ease, box-shadow 0.6s ease;
+  animation: pulse-teal 2.5s ease-in-out infinite;
+}
+
+.app-topbar__dot--warm {
+  background: var(--color-amber);
+  box-shadow: 0 0 10px var(--color-amber);
+  animation: pulse-amber 2.5s ease-in-out infinite;
+}
+
+.app-topbar__name {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: 0.04em;
+}
+
+.app-topbar__controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* ── Section counter ────────────────────────── */
+.section-counter {
+  position: fixed;
+  bottom: var(--space-8);
+  left: clamp(var(--space-6), 8vw, 120px);
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  z-index: 500;
+  font-family: var(--font-body);
+  letter-spacing: var(--tracking-wide);
+}
+
+.section-counter__current {
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: 1;
+}
+
+.section-counter__sep {
+  font-size: var(--text-base);
+  color: var(--color-text-dim);
+}
+
+.section-counter__total {
+  font-size: var(--text-base);
+  color: var(--color-text-dim);
+}
+
+/* RTL adjustments */
+[dir="rtl"] .section-counter {
+  left: auto;
+  right: clamp(var(--space-6), 8vw, 120px);
+}
+
+[dir="rtl"] .nav-dots {
+  right: auto;
+  left: 28px;
+}
+
+[dir="rtl"] .nav-dots__label {
+  right: auto;
+  left: calc(100% + 12px);
+  transform: translateX(-4px);
+}
+
+[dir="rtl"] .nav-dots__dot:hover .nav-dots__label {
+  transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+  .section-counter {
+    left: var(--space-6);
+    bottom: var(--space-5);
+  }
+  .app-topbar {
+    padding: 0 var(--space-4);
+    height: 52px;
+  }
+}
+
+/* ── Universal fix for mobile / small screen section overflow cutoff ── */
+.section-wrapper__content > div {
+  margin: auto 0 !important;
+  height: auto !important;
+  min-height: max-content;
+  justify-content: flex-start !important;
+  padding-top: clamp(80px, 12vh, 120px) !important;
+  padding-bottom: clamp(100px, 15vh, 140px) !important;
+}

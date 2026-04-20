@@ -1,0 +1,113 @@
+.promise__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(16, 12, 5, 0.95);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.promise__sparkle {
+  position: absolute;
+  z-index: 4;
+  font-size: 1rem;
+  color: var(--color-amber);
+  text-shadow: 0 0 12px var(--color-amber);
+  pointer-events: none;
+}
+
+.promise__inner {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  padding: var(--space-16) clamp(var(--space-8), 8vw, 120px);
+  gap: var(--space-6);
+  max-width: 820px;
+}
+
+.promise__inner > * { opacity: 0; }
+
+.promise__title {
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 900;
+  color: var(--color-text-primary);
+  line-height: 1.0;
+}
+
+.promise__title em {
+  color: var(--color-amber);
+  font-style: italic;
+  display: block;
+  animation: breathe-amb 3s ease-in-out infinite;
+}
+
+.promise__subtitle {
+  max-width: 520px;
+}
+
+.promise__commitments {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin: var(--space-2) 0;
+}
+
+.promise__commitment {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.promise__ci {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.promise__ct {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-normal);
+}
+
+.promise__actions {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.promise__footer {
+  margin-top: var(--space-6);
+  padding-top: var(--space-6);
+  border-top: 1px solid rgba(245, 197, 66, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+.promise__footer-logo {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-text-amber);
+}
+
+.promise__footer-tagline {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-dim);
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .promise__inner {
+    overflow-y: auto;
+    padding: var(--space-10) var(--space-6);
+    padding-top: var(--space-14);
+  }
+  .promise__sparkle { display: none; }
+}
