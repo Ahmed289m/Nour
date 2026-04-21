@@ -9,6 +9,7 @@ export default function PromiseSection() {
   const { currentSection } = useScroll();
   const { t } = useLang();
   const p = t.promise;
+  const whatsappUrl = 'https://wa.me/201105221901';
   const sectionRef = useRef(null);
   const bgRef = useRef(null);
   const contentRef = useRef(null);
@@ -73,8 +74,12 @@ export default function PromiseSection() {
         </div>
 
         <div className="promise__actions">
-          <button id="promise-find-help-btn" className="btn btn--amber">{p.cta1}</button>
-          <button id="promise-learn-btn" className="btn btn--amber-outline">{p.cta2}</button>
+          <a id="promise-find-help-btn" className="btn btn--amber" href={whatsappUrl} target="_blank" rel="noreferrer">
+            {p.cta1}
+          </a>
+          <a id="promise-learn-btn" className="btn btn--amber-outline" href={whatsappUrl} target="_blank" rel="noreferrer">
+            {p.cta2}
+          </a>
         </div>
 
         <footer className="promise__footer">

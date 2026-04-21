@@ -24,8 +24,8 @@
 
   /* Text */
   --color-text-primary:  #f0ede8;
-  --color-text-secondary:#a8a29e;
-  --color-text-dim:      #6b6560;
+  --color-text-secondary:rgba(255, 255, 255, 0.92);
+  --color-text-dim:      rgba(255, 255, 255, 0.82);
   --color-text-teal:     #2dd4a8;
   --color-text-amber:    #f5c542;
   --color-text-warm:     #fbbf7a;

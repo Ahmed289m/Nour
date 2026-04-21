@@ -11,7 +11,6 @@ import { useScroll } from './context/ScrollContext';
 
 import NavigationDots from './components/NavigationDots/NavigationDots';
 import LanguageToggle from './components/LanguageToggle/LanguageToggle';
-import SoundToggle from './components/SoundToggle/SoundToggle';
 
 import HeroSection from './sections/HeroSection/HeroSection';
 import StatisticsSection from './sections/StatisticsSection/StatisticsSection';
@@ -39,7 +38,6 @@ function AppInner() {
           <span className="app-topbar__name">Nour</span>
         </div>
         <div className="app-topbar__controls">
-          <SoundToggle />
           <LanguageToggle />
         </div>
       </header>
